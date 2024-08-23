@@ -1,0 +1,443 @@
+/* text color : 1F3965
+box color : FFFBFB
+background color : EDEDED */
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #EDEDED;
+    color: #1F3965;
+    
+
+}
+
+/* navbar */
+.navbar{
+    background-color: white;
+    font-size: 18px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    box-shadow: 0px 2px 12px 0px #1F3965;
+}
+.logo-name{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+
+}
+.logo-name img{
+    height: 70px;
+}
+.nav-list ul{
+    display: flex;
+
+    list-style-type: none;
+    gap: 50px;
+}
+.nav-list ul li a{   
+    text-decoration: none;
+    color: #1F3965;
+
+
+}
+
+
+
+/* login section */
+
+.sign-in{
+    background-color: #FFFBFB;
+    height: 570px;
+    width: 1000px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 65px;
+    /* border-top-left-radius: 65px;
+    border-bottom-left-radius: 65px; */
+
+
+}
+
+
+.student-sign-in{
+    height: 570px;
+    width: 500px;
+    border-radius: 65px;
+}
+
+.student-sign-in-heading{
+    font-weight: bolder;
+    margin-top: 100px;
+    text-align: center;
+    color: #1F3965;
+    font-size: 32px;
+}
+.student-sign-in-form{
+    background-color: #EDEDED;
+    color: #1F3965;
+    margin-left: 117px;
+    padding: 25px;
+    margin-top: 50px;
+    margin-right: 160px;
+    border-radius: 20px;
+    height: 220px;
+    width: 220px;
+}
+
+.student-sign-in-form form{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px; 
+}
+
+.student-sign-in-form form input{
+    height: 30px;
+    width: 200px;
+}
+
+.student-sign-in-form #signin a{
+    padding: 6px;
+    margin-left: 70px;
+    border-radius: 20px;
+    color: #1F3965;
+    background-color: #EDEDED;
+    text-decoration: none;
+
+}
+
+.student-sign-in-form #signin a:hover{
+    background-color: #1F3965;
+    color: #EDEDED;
+
+}
+.student-sign-in-form p a{
+    color: #1F3965;
+    background-color: #EDEDED;
+
+}
+
+
+
+
+.faculty-sign-in{
+    background-color: #1F3965;
+    height: 570px;
+    width: 500px;
+    border-radius: 65px;
+}
+
+.faculty-sign-in-heading{
+    font-weight: bolder;
+    margin-top: 100px;
+    text-align: center;
+    color: #FFFBFB;
+    font-size: 32px;
+}
+
+.faculty-sign-in-form{
+    background-color: #EDEDED;
+    color: #1F3965;
+    margin-left: 117px;
+    padding: 25px;
+    margin-top: 50px;
+    margin-right: 160px;
+    border-radius: 20px;
+    height: 220px;
+    width: 220px;
+}
+
+.faculty-sign-in-form form{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px; 
+}
+.faculty-sign-in-form form input{
+    height: 30px;
+    width: 200px;
+}
+.faculty-sign-in-form #signin a{
+    padding: 6px;
+    margin-left: 70px;
+    border-radius: 20px;
+    color: #1F3965;
+    background-color: #EDEDED;
+    text-decoration: none;
+
+}
+
+.faculty-sign-in-form #signin a:hover{
+    background-color: #1F3965;
+    color: #EDEDED;
+
+}
+
+.faculty-sign-in-form p a{
+    color: #1F3965;
+    background-color: #EDEDED;
+
+}
+
+/* sign-up section */
+
+.sign-up{
+    background-color:#FFFBFB;
+    margin: auto;
+    width: 870px;
+    border-radius: 50px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 10px;
+    font-size: 18px;
+
+}
+
+.sign-up .add-school{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.sign-up .add-school p a{
+    text-decoration: none;
+    color: #1F3965;
+}
+
+.sign-up .add-school p a:hover{
+    background-color: #1F3965;
+    color: #FFFBFB;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+
+
+
+
+
+/* footer */
+
+.footer-section{
+    background-color: #FFFBFB;
+    border-top-left-radius: 65px;
+    border-top-right-radius: 65px;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-around;
+    height: 200px;
+    padding-top: 70px;
+    font-size: 18px;
+   
+}
+
+.about-us a{
+    text-decoration: none;
+    color: #1F3965;
+}
+.about-us a:hover{
+    text-decoration: underline;
+    font-size: 18px;
+    color: #1F3965;
+}
+.about-us ul li{
+    color: #1F3965;
+    list-style-type: none;
+}
+
+.quick-links a{
+    text-decoration: none;
+    color: #1F3965;
+}
+.quick-links a:hover{
+    text-decoration: underline;
+    font-size: 18px;
+    color: #1F3965;
+}
+.quick-links ul li{
+    color: #1F3965;
+    list-style-type: none;
+}
+
+
+.social-media a{
+    text-decoration: none;
+    color: #1F3965;
+
+}
+.social-media a img{
+    height: 40px;
+}
+.social-media ul li{
+    color: #1F3965;
+    list-style-type: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* student inter  */
+
+.sub-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-evenly;
+    text-align: center;
+    padding-top: 30px;
+    margin-left: 190px;
+    align-items: center;
+}
+.box{
+    margin-top: 30px;
+}
+.content{
+    height: 80px;
+    width: 280px ;
+    background-color: #FFFBFB;
+    border-radius: 30px;
+    padding-top: 15px;
+    
+}    
+.content:hover{
+    background-color: #EDEDED;
+    box-shadow: 3px 1px 10px #1F3965;
+    height: 82px;
+    width: 282px;
+    text-decoration: underline;
+}
+
+
+
+/* faculty */
+
+.fac-section{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: space-evenly;
+    text-align: center;
+    padding-top: 30px;
+    margin-left: 290px;
+    align-items: center;
+}
+.fac-box{
+    margin-top: 30px;
+}
+.fac-content{
+    height: 80px;
+    width: 880px ;
+    background-color: #FFFBFB;
+    border-radius: 30px;
+    padding-top: 15px;
+    
+}    
+.fac-content:hover{
+    background-color: #EDEDED;
+    box-shadow: 3px 1px 10px #1F3965;
+    text-decoration: underline;
+}
+
+
+/* fixed boxes  */
+
+.fixed-box-profile {
+    position: fixed;
+    left: 0;
+    top: 292px;
+    transform: translateY(-50%);
+    height: 400px;
+    width: 100px; 
+    background-color: #FFFBFB;
+    padding: 20px;
+    box-shadow: 0 0  5px #1F3965;
+    border-bottom-right-radius: 30px;
+    
+    
+}
+.fixed-box-profile a{
+    text-decoration: none;
+    color: #1F3965;
+}
+.fixed-box-profile img{
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 0  5px #1F3965;
+
+}
+.fixed-box-profile img:hover{
+    box-shadow: 0 0  8px #1F3965;
+
+}
+.fixed-box-profile p{
+    padding-left: 20px;
+}
+.fixed-box-profile p:hover{
+    font-weight: bold;
+}
+
+
+/* slider */
+
+.slider {
+    position: fixed;
+    right: 0;
+    top: 43%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 410px;
+    background-color: #FFFBFB;
+    color:#1F3965;
+    cursor: pointer;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 0 10px #1F3965;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    transition: width .7s ease;
+
+
+}
+
+.slider-content {
+    width: 800px;
+    height: 100%;
+    
+}
+.slider-content h2{
+    padding-left: 300px;
+}
+.slider-content table{
+    border-collapse: collapse;
+}
+.slider-content table,table th,table td{
+    border-radius: 30px;
+    margin-left: 75px;
+    background-color: #EDEDED;
+    border: 2px solid #FFFBFB;
+    padding: 5px;
+    height: 25px;
+    width: 650px;
+}
+
+.slider.expanded {
+    width: 800px;
+    transition: width .7s ease;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
