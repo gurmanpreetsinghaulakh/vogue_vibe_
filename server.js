@@ -1,0 +1,145 @@
+const express = require('express') // Express for routing and middleware management
+const path = require('path') // Path to handle file paths
+const app = express()
+const PORT = 8080
+
+
+///////
+const morgan=require('morgan')//color codes to the status code
+app.use(morgan('dev'))
+const helmet = require('helmet');
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: [
+          "'self'",
+          "'unsafe-inline'",
+          "'unsafe-eval'",
+          "https://cdnjs.cloudflare.com" // Allow CDN for GSAP
+        ],
+        scriptSrcAttr: ["'unsafe-inline'"],
+        imgSrc: [
+          "'self'",
+          "data:",
+          "https://github.com/",
+          "https://raw.githubusercontent.com/",
+          "https://sustainable.chitkara.edu.in/",
+          "https://st4.depositphotos.com/",
+          "https://images4.alphacoders.com/",
+          "https://images.pexels.com",
+          "https://assets.armani.com",
+          "https://assets.burberry.com",
+          "https://www.chanel.com",
+          "https://assets.christiandior.com",
+          "https://media.gucci.com",
+          "https://in.louisvuitton.com",
+          "https://www.prada.com",
+          "https://saint-laurent.dam.kering.com"
+        ],
+        styleSrc: [
+          "'self'",
+          "'unsafe-inline'",
+          "https://fonts.googleapis.com/",
+          "https://cdnjs.cloudflare.com/" // Allow styles from CDN
+        ],
+        fontSrc: ["'self'", "https://fonts.gstatic.com/", "https://cdnjs.cloudflare.com/"],
+      },
+    },
+  })
+);
+
+
+// Protects against common vulnerabilities
+
+const cors = require('cors');
+app.use(cors()); // Enable all origins (for APIs)
+
+const bodyParser=require('body-parser')
+app.use(bodyParser.json());
+// // Middleware to parse URL-encoded data (from HTML forms)
+app.use(bodyParser.urlencoded({ extended: true }));
+
+
+const rateLimit = require('express-rate-limit'); // Import the package
+
+// Define a rate limit: Allow 100 requests per 15 minutes per IP
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // Limit each IP to 100 requests per windowMs
+    message: 'Too many requests from this IP, please try again later.',
+    headers: true, // Send rate limit info in headers
+});
+
+
+// Apply the rate limiter to all API routes
+app.use('/api', limiter);
+
+
+//////////////////
+
+// Import middlewares
+const logger = require('./middlewares/logger') // Import logger middleware
+const errorHandler = require('./middlewares/errorHandler') // Import error handler middleware
+// Middleware to handle JSON and URL-encoded data in POST requests
+app.use(express.json()) // To parse JSON bodies
+app.use(express.urlencoded({ extended: true })) // To parse URL-encoded data
+// Use logger middleware for all incoming requests
+app.use(logger) // Log each request
+// Serve static files (HTML, CSS, JS) from the /public directory
+app.use(express.static(path.join(__dirname, 'public')))
+// Import API routes from apiRoutes.js
+const apiRoutes = require('./api/apiRoutes') // Import the API routes for login and register functionality
+app.use('/api', apiRoutes) // Mount the API routes on /api path
+// Serve login.html at the root URL
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'new.html')) // Serve the login page at root URL
+})
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'login.html')) // Serve the login page at root URL
+})
+app.get('/contact', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'contact.html')) // Serve the login page at root URL
+})
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'register.html')) // Serve the login page at root URL
+})
+// Serve dashboard.html when user is authenticated
+app.get('/api/order', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'order.html')) // Serve the dashboard HTML file
+})
+// Serve register.html when user needs to register
+app.get('/api/register', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'register.html')) // Serve the register HTML file
+})
+app.get('/loui', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'loui.html')) // Serve the register HTML file
+})
+app.get('/armani', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'armani.html')) // Serve the register HTML file
+})
+app.get('/Burburry', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'Burburry.html')) // Serve the register HTML file
+})
+app.get('/Chanel', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'Chanel.html')) // Serve the register HTML file
+})
+app.get('/Dior', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'Dior.html')) // Serve the register HTML file
+}) 
+app.get('/gucci', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'gucci.html')) // Serve the register HTML file
+})
+app.get('/Prada', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'Prada.html')) // Serve the register HTML file
+})
+app.get('/Ysl', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'Ysl.html')) // Serve the register HTML file
+})
+// Use error handler middleware for catching and handling errors
+app.use(errorHandler) // Handle errors globally
+// Start the server and listen on the specified port
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`)
+})
