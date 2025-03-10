@@ -36,7 +36,7 @@ router.post('/register', (req, res, next) => {
     // Write the updated users array back to the JSON file
     fs.writeFile(path.join(__dirname, '../models/users.json'), JSON.stringify(users, null, 2), (err) => {
       if (err) return next(err) // Pass any error to the error handling middleware
-      res.status(302).redirect('/') // Redirect to login page after successful registration
+      res.status(302).redirect('/login') // Redirect to login page after successful registration
     })
   })
 })
